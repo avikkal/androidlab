@@ -1,16 +1,18 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="0dp"
+    android:background="#000000"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000000"
-        android:baselineAligned="false">
+        android:baselineAligned="false"
+        android:id="@+id/linearLayout2"
+        android:layout_weight="4">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -33,8 +35,9 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/textView3"
                     android:layout_weight="1"
-                    android:background="#FFFFFFFF"
-                    android:singleLine="false" />
+                    android:background="#ff9fffaf"
+                    android:singleLine="false"
+                    android:layout_marginRight="5dp" />
 
                 <TextView
                     android:layout_width="fill_parent"
@@ -42,7 +45,9 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/textView4"
                     android:layout_weight="1"
-                    android:background="#ff2e93ff" />
+                    android:background="#ff2e93ff"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp" />
 
             </LinearLayout>
 
@@ -66,7 +71,8 @@
                     android:id="@+id/textView"
                     android:layout_weight="1"
                     android:singleLine="true"
-                    android:background="#fff6ff1e" />
+                    android:background="#fff6ff1e"
+                    android:layout_marginBottom="5dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -74,7 +80,8 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/textView2"
                     android:layout_weight="1"
-                    android:background="#ff9fffaf" />
+                    android:background="#FFFFFFFF"
+                    android:layout_marginBottom="5dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -82,7 +89,8 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/textView5"
                     android:layout_weight="1"
-                    android:background="#ffff6d84" />
+                    android:background="#ffff6d84"
+                    />
             </LinearLayout>
 
         </LinearLayout>
@@ -92,7 +100,6 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/seekBar"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+        android:visibility="visible" />
 
-</RelativeLayout>
+</LinearLayout>
