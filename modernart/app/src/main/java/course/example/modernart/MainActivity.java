@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-
 public class MainActivity extends Activity {
 
     SeekBar mSeekBar;

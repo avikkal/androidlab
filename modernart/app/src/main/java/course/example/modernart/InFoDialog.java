@@ -4,7 +4,9 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 
 /**
@@ -12,8 +14,12 @@ import android.os.Bundle;
  */
 
 public class InFoDialog extends DialogFragment {
+
+    private static String URL = "http://www.moma.org/m#home";
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+        AlertDialog dialog = null;
         // Use the Builder class for convenient dialog construction
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         Resources res = getResources();
@@ -21,17 +27,18 @@ public class InFoDialog extends DialogFragment {
         builder.setMessage(msg)
                 .setPositiveButton(R.string.visit_moma, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        // FIRE ZE MISSILES!
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(InFoDialog.URL));
+                        startActivity(intent);
+                        InFoDialog.this.dismiss();
                     }
                 })
                 .setNegativeButton(R.string.not_now, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        return;
+                        InFoDialog.this.dismiss();
                     }
                 });
-        // Create the AlertDialog object and return it
-
-        return builder.create();
+        dialog = builder.create();
+        return dialog;
     }
 
 }

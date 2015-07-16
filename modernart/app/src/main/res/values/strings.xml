@@ -7,4 +7,6 @@
     <string name="visit_moma">Visit MOMA</string>
     <string name="not_now">Not Now</string>
     <string name="click_here_msg">Click below to learn more!</string>
+    <string name="title_activity_web_view">WebViewActivity</string>
+    <string name="return_option">Return</string>
 </resources>
