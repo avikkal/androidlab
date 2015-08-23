@@ -17,6 +17,7 @@ public class SelfieAlarm{
     private PendingIntent mNotificationReceiverPendingIntent;
 
     private static final long ALARM_DELAY = 2 * 60 * 1000L;
+    private static final long INITIAL_ALARM_DELAY = 1 / 2 * 60 * 1000L;
 
     public SelfieAlarm(Activity activity){
         mActivity = activity;
@@ -31,8 +32,8 @@ public class SelfieAlarm{
         mNotificationReceiverPendingIntent = PendingIntent.getBroadcast(mActivity, 0,
                 mNotificationReceiverIntent, 0);
 
-        mAlarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME,
-                SystemClock.elapsedRealtime() + ALARM_DELAY,
+        mAlarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+                SystemClock.elapsedRealtime() + INITIAL_ALARM_DELAY,
                 ALARM_DELAY, mNotificationReceiverPendingIntent);
 
 
