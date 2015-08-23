@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="course.example.dailyselfie" >
+    <uses-permission
+        android:name="android.permission.CAMERA"/>
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission
+        android:name="android.permission.VIBRATE" />
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true"/>
+    <uses-sdk
+        android:minSdkVersion="18" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,6 +27,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ImageActivity"
+            android:label="@string/app_name">
+        </activity>
+        <receiver android:name=".AlarmNotificationReceiver" >
+        </receiver>
     </application>
 
 </manifest>
